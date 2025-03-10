@@ -1,4 +1,4 @@
-# MoDec-GS: Global-to-Local Motion Decomposition and Temporal Interval Adjustment for Compact Dynamic 3D Gaussian Splatting
+# 🎄 MoDec-GS
 
 This repository is the official code for: 
 > __MoDec-GS: Global-to-Local Motion Decomposition and Temporal Interval Adjustment for Compact Dynamic 3D Gaussian Splatting__
@@ -16,4 +16,4 @@ This repository is the official code for:
 
 ## News
 
-📌 **[2025.03.10]** The repository has been created. The source code is being finalized refinement and will be available soon! 
+📌 **[2025.03.10]** The repository has been created. The source code is being finalized and will be available soon! 
