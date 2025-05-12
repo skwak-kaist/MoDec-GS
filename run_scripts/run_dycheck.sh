@@ -67,7 +67,7 @@ fi
 cp arguments/${dataset}/${base_config}.py arguments/${dataset}/base.py # copy the new base.py
 
 if [ ! -d "output/${output_path}" ]; then
-	mkdir output/${output_path}
+	mkdir -p output/${output_path}
 fi
 
 echo "training time" > "output/${output_path}/training_time.txt"
