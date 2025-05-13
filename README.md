@@ -1,4 +1,4 @@
-# 🎄 MoDec-GS
+# MoDec-GS🎄
 
 This repository is the official code for: 
 > __MoDec-GS: Global-to-Local Motion Decomposition and Temporal Interval Adjustment for Compact Dynamic 3D Gaussian Splatting__
@@ -36,7 +36,7 @@ bash install.sh
 
 The install script by default creates a conda environment named **modecgs**. Our environment was test with python=3.7 and torch=1.13+cu116, but not limited to these versions. If the install script does not work properly in your environment, please check  the `setup_modec_env.sh`
 
-2. **data preparation**
+2. **Data Preparation**
 
 We currently provide configurations and running scripts for the [HyperNeRF](https://hypernerf.github.io/), [Dycheck-iPhone](https://github.com/KAIR-BAIR/dycheck?tab=readme-ov-file), [Nvidia-monocular](https://github.com/coltonstearns/dynamic-gaussian-marbles?tab=readme-ov-file), [PanopticSports](http://domedb.perception.cs.cmu.edu/), [D-NeRF](https://github.com/albertpumarola/D-NeRF) datasets. The datasets needs to be placed as follows: 
 
@@ -81,11 +81,28 @@ bash colmap.sh data/${dataset}/${scene_path} ${dataset_type}
 
 The supported dataset types are blender, hypernerf, llff, nvidia, and dycheck. For additional details, you can directly refer to the [4DGS](https://github.com/hustvl/4DGaussians) repository. 
 
-3. **running script**
+3. **Running Script**
 
-The pre-written running scripts are located in the `run_scripts` folder. You can specify the GPU id, port number, and a config number when running a script. If you want to modify the configuration, place a modified file named `argument/${dataset_name}/config_${your_number}.py` and enter the corresponding number when running scripts. 
+The pre-written running scripts are located in the `run_scripts` folder. You can specify the GPU id, port number, and a config number when running a script. 
 
+```bash
+bash run_dycheck.sh 
+> Enter the GPU ID (default: 0): ${Your GPU ID}
+> Enter the port (default: 5000): ${Port Number}
+> Enter the config number (default: 1.0): ${Config number}
+> You can run all or first half(h1) or second half(h2) or individual sequence(id) of the dataset.
+> Enter the running sequence range (all or h1 or h2 or id, default: all): ${Dataset configuration}
 
+```
+
+* **GPU ID / Port**: Specifies the GPU and port to be used during execution.
+
+* **Config Number**: Specifies the configuration number to run. For example, if you input `1.0`, it will run based on the configuration defined in `MoDec-GS/arguments/${dataset}/config_1.0.py`. If you want to apply different configurations for each sequence, create a config file named as the sequence name (refer to the `hypernerf` arguments for guidance). 
+  For instance, if you create `MoDec-GS/arguments/hypernerf/aleks-teapot.py` and enter `1.0` as the config number, it will follow the arguments defined in `config_1.0.py` by default, and only the parameters defined in `aleks-teapot.py` will be overwritten.
+
+* **Dataset Config** is defined in `MoDec-GS/run_scripts/dataset_config`. Dataset configuration determines whether to run the **entire dataset (all)**, the **first half (h1)**, the **second half (h2)**, or **individual sequences (id)**.
+
+  
 
 ## Running
 
@@ -125,14 +142,15 @@ Please note that for Dycheck dataset, **masked metrics** (mPSNR, mSSIM, mLPIPS) 
 
 * This source code is built upon prior excellent works ([3DGS](https://github.com/graphdeco-inria/gaussian-splatting), [4DGS](https://github.com/hustvl/4DGaussians), [Scaffold-GS](https://github.com/city-super/Scaffold-GS)). We sincerely appreciate the authors for their outstanding contributions. 
 
+
+
 ## Citation
 
 ```
-@misc{kwak2025modecgsglobaltolocalmotiondecomposition,
+@InProceedings{kwak2025modecgs,
   title={MoDec-GS: Global-to-Local Motion Decomposition and Temporal Interval Adjustment for Compact Dynamic 3D Gaussian Splatting}, 
   author={Sangwoon Kwak and Joonsoo Kim and Jun Young Jeong and Won-Sik Cheong and Jihyong Oh and Munchurl Kim},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2025},
-  eprint={2501.03714},
-  archivePrefix={arXiv},
 }
 ```

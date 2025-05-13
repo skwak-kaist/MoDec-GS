@@ -145,7 +145,7 @@ for scene in $scenes; do
 
 done
 
-python collect_metric.py --output_path "output/${output_path}" --dataset ${dataset} --mask 1
+python collect_metric.py --output_path "output/${output_path}" --dataset ${dataset}
 
 #rm arguments/${dataset}/base.py
 
