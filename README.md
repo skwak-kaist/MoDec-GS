@@ -154,3 +154,8 @@ Please note that for Dycheck dataset, **masked metrics** (mPSNR, mSSIM, mLPIPS) 
   year={2025},
 }
 ```
+
+
+## 💫 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=skwak-kaist/MoDec-GS&type=Date)](https://www.star-history.com/#skwak-kaist/MoDec-GS&Date)
