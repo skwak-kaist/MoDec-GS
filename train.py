@@ -22,7 +22,7 @@ import torch
 torch.multiprocessing.set_sharing_strategy('file_system')
 from random import randint
 from utils.loss_utils import l1_loss, ssim, l2_loss, lpips_loss
-from gaussian_renderer import prefilter_voxel, render, render_original, network_gui
+from gaussian_renderer import prefilter_voxel, render, network_gui
 import sys
 from scene import Scene, GaussianModel
 from utils.general_utils import safe_state
